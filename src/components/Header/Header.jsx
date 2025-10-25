@@ -40,6 +40,10 @@ export default function Header() {
                             <img src={Logo} alt="" className="header__logo" />
                         </a>
 
+                        <button className="burger-btn">
+                            <i className="bi bi-list"></i>
+                        </button>
+
                         <ul className="header__list">
                             <HeaderItem text="Home" />
                             <HeaderItem text="Browse Menu" />
@@ -53,6 +57,13 @@ export default function Header() {
                             Login/Signup
                         </button>
                     </div>
+                    <ul className="header__list2">
+                        <HeaderItem text="Home" />
+                        <HeaderItem text="Browse Menu" />
+                        <HeaderItem text="Special Offers" />
+                        <HeaderItem text="Restaurants" />
+                        <HeaderItem text="Track Order" />
+                    </ul>
                 </div>
             </div>
         </header>

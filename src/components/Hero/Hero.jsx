@@ -10,7 +10,7 @@ export default function Hero() {
                         <p className="hero__first-text">Order Restaurant food, takeaway and groceries.</p>
                         <h1 className="hero__title">Feast Your Senses, <span className="hero__title-span"> Fast and Fresh</span></h1>
                         <p className="hero__second-text">Enter a postcode to see what we deliver</p>
-                        <SiteInput text/>
+                        <SiteInput text />
                     </div>
                     <div className="hero__right">
                         <div className="hero__right-comment">

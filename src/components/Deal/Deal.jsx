@@ -11,6 +11,9 @@ export default function Deal() {
                         <h2 className="deal__title">
                             Up to -40% 🎊 Order.uk exclusive deals
                         </h2>
+                        <h2 className="deal__title2">
+                            Up to -40% Discount Offers 🎊
+                        </h2>
 
                         <ul className="deal__list">
                             <DealItem text="Vegan" />

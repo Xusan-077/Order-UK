@@ -22,14 +22,14 @@ export default function About() {
                     </div>
                     <div className="about__bottom">
                         <div className="about__bottom-left">
-                            <HeaderItem width text="How does Order.UK work?" />
-                            <HeaderItem width text="What payment methods are accepted?" />
-                            <HeaderItem width text="Can I track my order in real-time?" />
-                            <HeaderItem width text="Are there any special discounts or promotions available?" />
-                            <HeaderItem width text="Is Order.UK available in my area?" />
+                            <HeaderItem active width text="How does Order.UK work?" />
+                            <HeaderItem active width text="What payment methods are accepted?" />
+                            <HeaderItem active width text="Can I track my order in real-time?" />
+                            <HeaderItem active width text="Are there any special discounts or promotions available?" />
+                            <HeaderItem active width text="Is Order.UK available in my area?" />
                         </div>
                         <div className="about__bottom-right">
-                            <ul className="about__list">
+                            <ul className="about__bottom-list">
                                 {
                                     Orders.map((el) => <AboutItem key={el.id} {...el} />)
                                 }

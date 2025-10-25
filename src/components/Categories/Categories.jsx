@@ -1,14 +1,13 @@
 import { categories } from "../../Constants";
 import CategoriesItem from "../CategoriesItem/CategoriesItem";
+import WebTitle from "../WebTitle/WebTitle";
 
 export default function Categories() {
     return (
         <section className="categories">
             <div className="container">
                 <div className="categories__inner">
-                    <h2 className="categories__title">
-                        Order.uk Popular Categories 🤩
-                    </h2>
+                    <WebTitle text="Order.uk Popular Categories 🤩" />
 
                     <ul className="categories__list">
                         {

@@ -7,7 +7,7 @@ import Categories from './components/Categories/Categories'
 import Restaurants from './components/Restaurants/Restaurants'
 import More from './components/More/More'
 import Start from './components/Start/Start'
-import About from './components/about/about'
+import About from './components/About/About'
 import Status from './components/Status/Status'
 
 function App() {
@@ -15,11 +15,11 @@ function App() {
     <>
       <Header />
       <Hero />
-      <Deal />
+      {/* <Deal /> */}
       <Categories />
       <Restaurants />
       <More />
-      <Start />
+      {/* <Start /> */}
       <About />
       <Status />
       <Footer />
