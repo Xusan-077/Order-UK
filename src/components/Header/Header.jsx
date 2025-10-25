@@ -1,18 +1,29 @@
+import { useState } from "react"
+
 import LocatioIcon from "../../assets/icons/Location.svg"
 
 import Basket from "../../assets/img/Basket.svg"
 import Forward from "../../assets/img/Forward.svg"
 
 import Logo from "../../assets/img/logo.svg"
-import HeaderItem from "../HeaderItem/HeaderItem"
+import HeaderItem from "../../components/HeaderItem/HeaderItem"
 
 import maleUser from "../../assets/icons/male-user.svg"
+import Burger from "../../components/Burger/Burger"
 
 export default function Header() {
+    const [burger, setBurger] = useState(false)
     return (
         <header className="header">
             <div className="container">
                 <div className="header__inner">
+
+
+
+                    {
+                        burger && <Burger setBurger={setBurger} />
+                    }
+
                     <div className="header__top">
                         <div className="header__top__right">
                             <p className="header__top__right-text">
@@ -40,7 +51,7 @@ export default function Header() {
                             <img src={Logo} alt="" className="header__logo" />
                         </a>
 
-                        <button className="burger-btn">
+                        <button className="burger-btn" onClick={() => setBurger(true)}>
                             <i className="bi bi-list"></i>
                         </button>
 
