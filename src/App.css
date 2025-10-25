@@ -673,11 +673,11 @@ button {
   color: #000;
   font-size: 16px;
   font-weight: 400;
-  transition: 0.3s ease;
 }
 
 .deal__link:hover {
   border: 1px solid #fc8a06;
+  padding: 14px 29px;
   border-radius: 120px;
   color: #fc8a06;
 }
@@ -745,7 +745,6 @@ button {
 }
 
 .menu {
-  border-radius: 12px;
   width: 80%;
   position: fixed;
   top: 50%;
