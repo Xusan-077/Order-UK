@@ -15,11 +15,11 @@ function App() {
     <>
       <Header />
       <Hero />
-      {/* <Deal /> */}
+      <Deal />
       <Categories />
       <Restaurants />
       <More />
-      {/* <Start /> */}
+      <Start />
       <About />
       <Status />
       <Footer />

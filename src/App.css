@@ -19,7 +19,10 @@ input {
 
 button {
   cursor: pointer;
+  border: none;
 }
+
+/* header */
 
 .header__top {
   padding: 0 0 0 37px;
@@ -325,6 +328,12 @@ button {
   z-index: 1;
 }
 
+.hero__right-comment:hover {
+  transition: transform 0.3s ease;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+
 .hero__right-comment:nth-child(1) {
   top: 100px;
   right: 100px;
@@ -413,7 +422,6 @@ button {
 @media (max-width: 800px) {
   .hero__inner {
     flex-direction: column;
-    /* chap va o‘ngni ustma-ust joylash */
     align-items: center;
     justify-content: center;
     padding: 80px 20px;
@@ -467,7 +475,7 @@ button {
   }
 }
 
-/* Deals */
+/* deal*/
 
 .deal__inner {
   margin-bottom: 50px;
@@ -478,16 +486,28 @@ button {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .deal__title {
   font-size: 32px;
   font-weight: 700;
+  color: #03081f;
+}
+
+.deal__title2 {
+  display: none;
+  font-size: 28px;
+  font-weight: 700;
+  color: #03081f;
 }
 
 .deal__list {
   display: flex;
   align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .deal__link {
@@ -496,33 +516,36 @@ button {
   color: #000;
   font-size: 16px;
   font-weight: 400;
+  transition: 0.3s ease;
 }
 
 .deal__link:hover {
-  border: 1px solid #FC8A06;
+  border: 1px solid #fc8a06;
   border-radius: 120px;
-  padding: 14px 29px;
-  color: #FC8A06;
+  color: #fc8a06;
 }
 
 .deal__card-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
 .deal__card-item {
   padding: 226px 0 36px 46px;
-  max-width: 500px;
   background-repeat: no-repeat;
   border-radius: 12px;
   position: relative;
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center;
+  min-width: 320px;
+  scroll-snap-align: start;
 }
 
 .deal__card__text {
   font-size: 18px;
   font-weight: 500;
-  color: #FC8A06;
+  color: #fc8a06;
 }
 
 .deal__card__title {
@@ -533,7 +556,7 @@ button {
 
 .deal__card-percentage {
   position: absolute;
-  background-color: #03081F;
+  background-color: #03081f;
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
   color: #fff;
@@ -544,21 +567,13 @@ button {
   font-weight: 700;
 }
 
-.deal__title2 {
-  display: none;
-}
-
-@media (max-width:1200px) {
-  .deal__title {
-    font-size: 25px;
+@media (max-width: 1300px) {
+  .deal__card-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width:1060px) {
-  .deal__title {
-    font-size: 20px;
-  }
-
+@media (max-width: 950px) {
   .deal__title {
     display: none;
   }
@@ -566,42 +581,69 @@ button {
   .deal__title2 {
     display: block;
   }
-}
 
-@media (max-width: 950px) {
-  .deal__list {
-    width: 400px;
+  /* scrollable card list */
+  .deal__card-list {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     overflow-x: auto;
-    padding: 10px 0;
-    scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
   }
 
-  .deal__item a {
-    width: 200px;
-    text-align: center;
+  .deal__card-list::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .deal__card-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+
+  .deal__card-item {
+    flex: 0 0 auto;
+    width: 320px;
+    min-width: 320px;
+    padding: 200px 0 30px 30px;
   }
 }
 
 @media (max-width: 700px) {
-  .deal__top {
-    align-items: start;
-    flex-direction: column;
-  }
-
-  .deal__list {
-    width: 100%;
-  }
-
   .deal__title2 {
-    font-size: 16px;
+    font-size: 20px;
+  }
+
+  .deal__card-item {
+    width: 280px;
+    padding: 180px 0 30px 25px;
+  }
+
+  .deal__card__title {
+    font-size: 20px;
+  }
+
+  .deal__card__text {
+    font-size: 14px;
   }
 }
 
+@media (max-width: 480px) {
+  .deal__card-item {
+    width: 250px;
+    min-width: 250px;
+    padding: 150px 0 25px 20px;
+  }
 
+  .deal__card__title {
+    font-size: 18px;
+  }
 
+  .deal__card-percentage {
+    font-size: 14px;
+    padding: 12px;
+    right: 10px;
+  }
+}
 
 /* categories */
 
@@ -701,8 +743,6 @@ button {
   }
 }
 
-
-
 /* restaurants */
 
 .restaurants__inner {
@@ -724,6 +764,11 @@ button {
   background-color: #FC8A06;
   border-radius: 12px;
   border: 1px solid #00000033;
+  transition: transform 0.3s ease;
+}
+
+.restaurants__item:hover {
+  transform: translateY(-5px);
 }
 
 .restaurants__text {
@@ -757,6 +802,7 @@ button {
 
 @media (max-width: 1397px) {
   .restaurants__list {
+    padding: 10px 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -780,8 +826,6 @@ button {
     display: flex;
     gap: 16px;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
     padding-bottom: 10px;
   }
 
@@ -791,7 +835,6 @@ button {
 
   .restaurants__item {
     flex: 0 0 140px;
-    scroll-snap-align: start;
     border-radius: 12px;
   }
 
@@ -805,6 +848,11 @@ button {
   }
 }
 
+@media (max-width : 700px) {
+  .restaurants__inner {
+    margin-bottom: 50px;
+  }
+}
 
 /* More */
 
@@ -958,6 +1006,10 @@ button {
   .more__scond-text {
     max-width: 350px;
   }
+
+  .more__inner {
+    margin-bottom: 50px;
+  }
 }
 
 @media (max-width:416px) {
@@ -993,8 +1045,7 @@ button {
   }
 }
 
-
-/* Start */
+/* Start  */
 
 .start__inner {
   margin-bottom: 50px;
@@ -1004,12 +1055,18 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .start__item {
   position: relative;
   background: #03081F;
   width: 754px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 
 .start__top {
@@ -1017,6 +1074,7 @@ button {
   padding: 20px;
   background-color: #fff;
   left: 70px;
+  top: 0;
   border-radius: 0 0 12px 12px;
 }
 
@@ -1050,19 +1108,126 @@ button {
   background-color: #FC8A06;
   padding: 15px 50px;
   border-radius: 120px;
+  transition: 0.3s ease;
 }
 
-@media (max-width:1560px) {
+.start__button:hover {
+  background-color: #ff9d33;
+}
+
+@media (max-width: 1560px) {
   .start__bottom {
-    padding: 230px 0 30px 70px;
-    width: 50%;
+    padding: 230px 80px 30px 70px;
   }
 
   .start__list {
     flex-direction: column;
-    gap: 20px;
+    align-items: center;
+  }
+
+  .start__item {
+    width: 90%;
   }
 }
+
+@media (max-width: 1200px) {
+  .start__bottom {
+    padding: 200px 60px 40px 50px;
+  }
+
+  .start__title {
+    font-size: 36px;
+  }
+
+  .start__text {
+    font-size: 16px;
+  }
+
+  .start__button {
+    font-size: 16px;
+    padding: 12px 40px;
+  }
+
+  .start__top {
+    left: 40px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 950px) {
+  .start__bottom {
+    padding: 180px 40px 40px 40px;
+  }
+
+  .start__title {
+    font-size: 30px;
+  }
+
+  .start__text {
+    font-size: 15px;
+  }
+
+  .start__top {
+    left: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .start__item {
+    width: 100%;
+  }
+
+  .start__bottom {
+    padding: 160px 30px 30px 30px;
+  }
+
+  .start__title {
+    font-size: 26px;
+  }
+
+  .start__button {
+    text-align: center;
+  }
+
+  .start__top {
+    left: 20px;
+  }
+
+  .start__inner {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .start__bottom {
+    padding: 120px 20px 30px 20px;
+  }
+
+  .start__title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .start__text {
+    font-size: 14px;
+  }
+
+  .start__button {
+    font-size: 11px;
+    padding: 7px 25px;
+  }
+
+  .start__top {
+    left: 15px;
+    padding: 10px;
+    padding: 5px 10px;
+  }
+
+  .start__top p {
+    font-size: 13px;
+  }
+}
+
 
 /* about */
 
@@ -1115,6 +1280,11 @@ button {
   padding: 34px 28px;
   background-color: #D9D9D9;
   border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.about__item:hover {
+  transform: translateY(-5px);
 }
 
 .about__subtitle {
@@ -1296,7 +1466,6 @@ button {
   background-color: #D9D9D9;
 }
 
-
 .footer__top {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1408,9 +1577,9 @@ button {
 
 @media (max-width:1000px) {
   .footer__top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px 0;
   }
 
   .footer-first {
@@ -1440,8 +1609,6 @@ button {
 
 @media (max-width: 550px) {
   .footer__main-list {
-    /* display: flex; */
-    align-items: center;
     gap: 50px;
     flex-direction: column;
   }
